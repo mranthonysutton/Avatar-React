@@ -1,12 +1,12 @@
 import React from "react";
-import logo from "./logo.svg";
+import { Route } from "react-router-dom";
 import "./App.css";
 import Character from "./components/character/character";
 
 function App() {
   return (
     <div className="App">
-      <Character />
+      <Route exact path="/" component={Character} />
     </div>
   );
 }
