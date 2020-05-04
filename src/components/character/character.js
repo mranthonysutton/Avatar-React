@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axiosHook from "../../utils/axiosHook";
+import RenderCharacter from "./RenderCharacter";
 
 const Character = () => {
   const [characterData, setCharacterData] = useState({});
@@ -15,11 +16,10 @@ const Character = () => {
       });
   }, []);
 
-  console.log(characterData);
-
   return (
     <div>
       <h3>Avatar Characters</h3>
+      <RenderCharacter />
     </div>
   );
 };
