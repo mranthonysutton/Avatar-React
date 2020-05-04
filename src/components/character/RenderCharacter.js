@@ -1,19 +1,20 @@
 import React, { useEffect, useState } from "react";
 import axiosHook from "../../utils/axiosHook";
 
-const RenderCharacter = () => {
+const RenderCharacter = (props) => {
   const [characterData, setCharacterData] = useState({});
+  const [perPage, setPerPage] = useState(5);
 
   useEffect(() => {
     axiosHook()
-      .get("/api/v1/characters")
+      .get(`/api/v1/characters?page=${props.pagination}&perPage=${perPage}`)
       .then((response) => {
         setCharacterData(response.data);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, []);
+  }, [props.pagination]);
 
   return (
     <div className="char-card">
