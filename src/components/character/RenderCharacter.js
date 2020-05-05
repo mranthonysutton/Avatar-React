@@ -14,7 +14,7 @@ const RenderCharacter = (props) => {
       .catch((error) => {
         console.error(error);
       });
-  }, [props.pagination]);
+  }, [props.pagination || perPage]);
 
   return (
     <div className="char-card">
