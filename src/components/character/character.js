@@ -6,7 +6,9 @@ const Character = () => {
   const [pagination, setPagination] = useState(1);
   const handlePrev = (event) => {
     event.preventDefault();
-    setPagination(pagination - 1);
+    if (pagination > 1) {
+      setPagination(pagination - 1);
+    }
   };
 
   const handleNext = (event) => {
@@ -16,7 +18,8 @@ const Character = () => {
 
   return (
     <div>
-      <h1>Avatar Characters</h1>
+      <h1 className="text-center text-4xl">Avatar Characters</h1>
+      <Pagination handlePrev={handlePrev} handleNext={handleNext} />
       <RenderCharacter pagination={pagination} />
       <Pagination handlePrev={handlePrev} handleNext={handleNext} />
     </div>

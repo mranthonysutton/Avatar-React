@@ -14,18 +14,18 @@ const RenderCharacter = (props) => {
       .catch((error) => {
         console.error(error);
       });
-  }, [props.pagination || perPage]);
+  }, [props.pagination]);
 
   return (
-    <div className="char-card">
+    <div className="">
       {characterData.length > 0 &&
         characterData.map((character) => (
-          <div className="char-card" key={character._id}>
+          <div className="" key={character._id}>
             <h3>{character.name}</h3>
             <p>{character.affiliation}</p>
             <img src={character.photoUrl} alt={character.name} />
-            <div className="character-buttons">
-              <button>Allies</button>
+            <div className="">
+              <button className="">Allies</button>
               <button>Enemies</button>
             </div>
           </div>
