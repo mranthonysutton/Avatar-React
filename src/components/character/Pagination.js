@@ -2,9 +2,9 @@ import React from "react";
 
 const Pagination = (props) => {
   return (
-    <div className="inline-flex">
+    <div className="text-center my-2">
       <button
-        className="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
+        className="disabled bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded-l"
         onClick={props.handlePrev}
       >
         Prev

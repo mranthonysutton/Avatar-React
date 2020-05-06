@@ -3,22 +3,30 @@ import axiosHook from "../../utils/axiosHook";
 
 const RenderCharacter = (props) => {
   const [characterData, setCharacterData] = useState({});
-  const [perPage, setPerPage] = useState(5);
+  const [perPage, setPerPage] = useState(15);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axiosHook()
-      .get(`/api/v1/characters?page=${props.pagination}&perPage=${perPage}`)
+      .get(
+        `/api/v1/characters?page=${props.pagination}&perPage=${perPage}&name=${props.searchName}`
+      )
       .then((response) => {
         setCharacterData(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.error(error);
       });
-  }, [props.pagination]);
+  }, [props]);
 
   return (
     <div className="flex flex-wrap align-center justify-center">
-      {characterData.length > 0 &&
+      {loading ? (
+        <h1 className="text-5xl pt-5">Loading...</h1>
+      ) : characterData.length === 0 ? (
+        <h1 className="text-5xl">No character data found</h1>
+      ) : (
         characterData.map((character) => (
           <div
             className="w-full sm:w-2/5 md:w-1/4 border-2 border-solid border-red-900 mx-1 my-2 rounded py-1 px-1"
@@ -32,7 +40,8 @@ const RenderCharacter = (props) => {
               <button>Enemies</button>
             </div>
           </div>
-        ))}
+        ))
+      )}
     </div>
   );
 };
