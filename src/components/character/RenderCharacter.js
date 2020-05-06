@@ -17,10 +17,13 @@ const RenderCharacter = (props) => {
   }, [props.pagination]);
 
   return (
-    <div className="">
+    <div className="flex flex-wrap align-center justify-center">
       {characterData.length > 0 &&
         characterData.map((character) => (
-          <div className="" key={character._id}>
+          <div
+            className="w-full sm:w-2/5 md:w-1/4 border-2 border-solid border-red-900 mx-1 my-2 rounded py-1 px-1"
+            key={character._id}
+          >
             <h3>{character.name}</h3>
             <p>{character.affiliation}</p>
             <img src={character.photoUrl} alt={character.name} />
