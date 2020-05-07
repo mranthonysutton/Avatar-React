@@ -6,10 +6,12 @@ const RenderCharacter = (props) => {
   const [perPage, setPerPage] = useState(15);
   const [loading, setLoading] = useState(true);
 
+  console.log(props);
+
   useEffect(() => {
     axiosHook()
       .get(
-        `/api/v1/characters?page=${props.pagination}&perPage=${perPage}&name=${props.searchName}`
+        `/api/v1/characters?page=${props.pagination}&perPage=${perPage}&name=${props.searchName}&affiliation=${props.affiliation}`
       )
       .then((response) => {
         setCharacterData(response.data);
