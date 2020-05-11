@@ -31,8 +31,10 @@ const RenderCharacter = (props) => {
             className="w-full sm:w-2/5 md:w-1/4 border-2 border-solid border-red-900 mx-1 my-2 rounded py-1 px-1"
             key={character._id}
           >
-            <h3>{character.name}</h3>
-            <p>{character.affiliation}</p>
+            <div className="text-center mb-2">
+              <h3 className="text-xl font-black">{character.name}</h3>
+              <p className="text-xs italic">{character.affiliation}</p>
+            </div>
             <img src={character.photoUrl} alt={character.name} />
             <div className="">
               <button className="">Allies</button>
