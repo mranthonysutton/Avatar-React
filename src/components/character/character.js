@@ -7,6 +7,7 @@ const Character = () => {
   const [pagination, setPagination] = useState(1);
   const [searchName, setSearchName] = useState("");
   const [affiliation, setAffiliation] = useState("");
+  const [resultsPerpage, setResultsPerPage] = useState(5);
 
   const handlePrev = (event) => {
     event.preventDefault();
@@ -29,14 +30,23 @@ const Character = () => {
     setAffiliation(event.target.value);
   };
 
+  const changeResults = (event) => {
+    setResultsPerPage(event.target.value);
+  };
+
   return (
     <div className="container">
       <h1 className="text-center text-4xl">Avatar Characters</h1>
-      <Search charName={changeCharName} affiliation={changeAffiliation} />
+      <Search
+        charName={changeCharName}
+        affiliation={changeAffiliation}
+        changeResults={changeResults}
+      />
       <RenderCharacter
         pagination={pagination}
         searchName={searchName}
         affiliation={affiliation}
+        results={resultsPerpage}
       />
       <Pagination handlePrev={handlePrev} handleNext={handleNext} />
     </div>
