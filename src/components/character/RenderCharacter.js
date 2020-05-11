@@ -35,10 +35,24 @@ const RenderCharacter = (props) => {
               <h3 className="text-xl font-black">{character.name}</h3>
               <p className="text-xs italic">{character.affiliation}</p>
             </div>
-            <img src={character.photoUrl} alt={character.name} />
-            <div className="">
-              <button className="">Allies</button>
-              <button>Enemies</button>
+            <img
+              className="rounded mb-2 center"
+              src={character.photoUrl}
+              alt={character.name}
+            />
+            <div className="container flex-col mx-2">
+              <div className="mb-2">
+                <h4 className="text-lg font-black underline">Allies</h4>
+                <ul className="text-sm">
+                  <li>Name</li>
+                </ul>
+              </div>
+              <div>
+                <h4 className="text-lg font-black underline">Enemies</h4>
+                <ul className="text-sm">
+                  <li>Name</li>
+                </ul>
+              </div>
             </div>
           </div>
         ))
