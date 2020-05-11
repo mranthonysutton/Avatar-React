@@ -43,11 +43,27 @@ const RenderCharacter = (props) => {
             <div className="container flex-col mx-2">
               <div className="mb-2">
                 <h4 className="text-lg font-medium underline">Allies</h4>
-                <ul className="text-sm">{character.allies}</ul>
+                <ul className="text-sm">
+                  {character.allies.length > 1 ? (
+                    character.allies.map((allies, index) => (
+                      <li key={index}>{allies}</li>
+                    ))
+                  ) : (
+                    <li>{character.allies}</li>
+                  )}
+                </ul>
               </div>
               <div>
                 <h4 className="text-lg font-medium underline">Enemies</h4>
-                <ul className="text-sm">{character.enemies}</ul>
+                <ul className="text-sm">
+                  {character.enemies.length > 1 ? (
+                    character.enemies.map((enemy, index) => (
+                      <li key={index}>{enemy}</li>
+                    ))
+                  ) : (
+                    <li>{character.enemies}</li>
+                  )}
+                </ul>
               </div>
             </div>
           </div>
