@@ -43,15 +43,11 @@ const RenderCharacter = (props) => {
             <div className="container flex-col mx-2">
               <div className="mb-2">
                 <h4 className="text-lg font-black underline">Allies</h4>
-                <ul className="text-sm">
-                  <li>Name</li>
-                </ul>
+                <ul className="text-xs">{character.allies}</ul>
               </div>
               <div>
                 <h4 className="text-lg font-black underline">Enemies</h4>
-                <ul className="text-sm">
-                  <li>Name</li>
-                </ul>
+                <ul className="text-xs">{character.enemies}</ul>
               </div>
             </div>
           </div>
