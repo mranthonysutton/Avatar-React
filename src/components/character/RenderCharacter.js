@@ -31,23 +31,23 @@ const RenderCharacter = (props) => {
             className="w-full sm:w-2/5 md:w-1/4 border-2 border-solid border-red-900 mx-1 my-2 rounded py-1 px-1"
             key={character._id}
           >
-            <div className="text-center mb-2">
-              <h3 className="text-xl font-black">{character.name}</h3>
+            <div className="flex flex-col align-center text-center mb-2">
+              <h3 className="text-2xl font-bold">{character.name}</h3>
               <p className="text-xs italic">{character.affiliation}</p>
+              <img
+                className="rounded mb-2"
+                src={character.photoUrl}
+                alt={character.name}
+              />
             </div>
-            <img
-              className="rounded mb-2 center"
-              src={character.photoUrl}
-              alt={character.name}
-            />
             <div className="container flex-col mx-2">
               <div className="mb-2">
-                <h4 className="text-lg font-black underline">Allies</h4>
-                <ul className="text-xs">{character.allies}</ul>
+                <h4 className="text-lg font-medium underline">Allies</h4>
+                <ul className="text-sm">{character.allies}</ul>
               </div>
               <div>
-                <h4 className="text-lg font-black underline">Enemies</h4>
-                <ul className="text-xs">{character.enemies}</ul>
+                <h4 className="text-lg font-medium underline">Enemies</h4>
+                <ul className="text-sm">{character.enemies}</ul>
               </div>
             </div>
           </div>
