@@ -36,7 +36,9 @@ const Character = () => {
 
   return (
     <div className="container">
-      <h1 className="text-center text-4xl">Avatar Characters</h1>
+      <h1 className="text-center text-5xl mb-2 text-indigo-900">
+        Avatar Characters
+      </h1>
       <Search
         charName={changeCharName}
         affiliation={changeAffiliation}
