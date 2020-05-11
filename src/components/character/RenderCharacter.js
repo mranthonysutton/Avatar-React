@@ -28,7 +28,7 @@ const RenderCharacter = (props) => {
       ) : (
         characterData.map((character) => (
           <div
-            className="w-full sm:w-2/5 md:w-1/4 border-2 border-solid border-red-900 mx-1 my-2 rounded py-1 px-1"
+            className="w-full sm:w-2/5 md:w-1/4 border-2 border-solid border-indigo-900 mx-1 my-2 rounded py-1 px-1 text-gray-700"
             key={character._id}
           >
             <div className="flex flex-col align-center text-center mb-2">
